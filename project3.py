@@ -27,7 +27,7 @@ def main():
         rescaledX = scaler.transform(T)
 
         print("---------------------------------------------------------------------------------------------------")
-        X, Xtest, y, ytest = train_test_split(T, P, random_state=1, test_size=.3)
+        X, Xtest, y, ytest = train_test_split(rescaledX, P, random_state=1, test_size=.3)
     if DatasetNM == "REALDISP":
         # this is REALDISP Activity Recognition Dataset Data Set
         train = pd.read_csv('/Users/Mohammed/Desktop/REALDISP.csv', header=None)
@@ -43,7 +43,7 @@ def main():
         scaler = StandardScaler().fit(T) # standardization dataset
         rescaledX = scaler.transform(T)
         #divide the dataset into train data and test data
-        X, Xtest, y, ytest = train_test_split(T, P, random_state=1, test_size=.3)
+        X, Xtest, y, ytest = train_test_split(rescaledX, P, random_state=1, test_size=.3)
     if DatasetNM=="otherData":
         # it is used to enter other dataset by usinf the path of dataset file and number of coloumn
         trainraws = []
